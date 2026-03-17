@@ -1,0 +1,274 @@
+﻿/* =========================================================
+   Secure-Tech Design System
+   Palette: void-black slate · Firebase Spark amber · icy cyan
+   Fonts:   Space Grotesk (headings) · JetBrains Mono (body)
+   Config:  Tailwind v4 CSS-first — tokens live in @theme
+   ========================================================= */
+
+@import "tailwindcss";
+
+/* ── Design Tokens ──────────────────────────────────────── */
+:root {
+  /* Background scale */
+  --background:     #080c10;   /* void-black navy */
+  --surface:        #0d1117;   /* deep panel surface (GitHub dark) */
+  --surface-strong: #161b22;   /* elevated / header panel */
+
+  /* Foreground */
+  --foreground: #e6edf3;       /* cold icy white */
+  --muted:      #8b949e;       /* secondary / placeholder text */
+
+  /* Borders */
+  --border: #21262d;           /* hairline rule */
+
+  /* Accent — Firebase Spark amber */
+  --accent:      #ff8a00;
+  --accent-soft: rgba(255, 138, 0, 0.10);
+  --accent-glow: rgba(255, 138, 0, 0.22);
+  --accent-text: #0d0700;      /* on-accent label text */
+
+  /* Data metrics */
+  --data:       #22d3ee;       /* icy cyan — primary metric colour */
+  --data-green: #3fb950;       /* positive delta / contribution green */
+
+  /* Elevation shadow */
+  --shadow: 0 16px 48px rgba(0, 0, 0, 0.55);
+}
+
+/* ── Tailwind Theme Bridge ──────────────────────────────── */
+@theme inline {
+  --color-background:  var(--background);
+  --color-surface:     var(--surface);
+  --color-foreground:  var(--foreground);
+  --color-accent:      var(--accent);
+  --color-muted:       var(--muted);
+  --color-border:      var(--border);
+  --color-data:        var(--data);
+  --color-data-green:  var(--data-green);
+  --font-sans:    var(--font-body);
+  --font-mono:    var(--font-body);
+  --font-heading: var(--font-heading);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 110% 55% at 70%   0%, rgba(255, 138,  0, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse  80% 45% at 15% 100%, rgba( 34, 211, 238, 0.04) 0%, transparent 55%),
+    var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), monospace;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  content: "";
+  background-image:
+    linear-gradient(rgba(33, 38, 45, 0.55) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(33, 38, 45, 0.55) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 30%, transparent 80%);
+  opacity: 0.5;
+}
+
+body::after {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.28)),
+    radial-gradient(circle at center, transparent 58%, rgba(0, 0, 0, 0.45) 100%);
+}
+
+a,
+button {
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    opacity 180ms ease;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+/* ── Layout Utilities ───────────────────────────────────── */
+.section-shell {
+  position: relative;
+  scroll-margin-top: 6rem;
+}
+
+.section-kicker {
+  color: var(--accent);
+  font-family: var(--font-heading), sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-family: var(--font-heading), sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.section-copy {
+  color: var(--muted);
+  line-height: 1.85;
+}
+
+/* Decorative divider between sections */
+.speaker-rule {
+  height: 12px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0 12px,
+    rgba(34, 211, 238, 0.07) 12px 13px
+  );
+  opacity: 0.7;
+}
+
+/* ── Component Primitives ───────────────────────────────── */
+.panel {
+  border: 1px solid var(--border);
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.025) 0%, transparent 60%),
+    var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.hover-glow:hover {
+  border-color: var(--accent);
+  box-shadow:
+    0 0 0 1px var(--accent-glow),
+    0 20px 48px rgba(0, 0, 0, 0.55),
+    0 0 40px var(--accent-soft);
+}
+
+/* tech badge — tools / stack labels */
+.badge {
+  border: 1px solid rgba(255, 138, 0, 0.28);
+  background: rgba(255, 138, 0, 0.08);
+  color: var(--accent);
+}
+
+/* inline chip — links / tags */
+.chip {
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* data-metric inline label */
+.metric {
+  color: var(--data);
+  font-family: var(--font-body), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* glass card — GitHubWidget / live-data components */
+.glass-card {
+  background: rgba(13, 17, 23, 0.55);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+}
+
+/* ── Decorative Layers ──────────────────────────────────── */
+.noise-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.07;
+  mix-blend-mode: soft-light;
+  background-image: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.4) 0.7px, transparent 0.8px);
+  background-size: 18px 18px;
+}
+
+.scanline-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03) 0,
+    rgba(255, 255, 255, 0.03) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  opacity: 0.1;
+}
+
+/* ── Scroll-Reveal ──────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 650ms ease,
+    transform 650ms ease;
+  transition-delay: var(--delay, 0ms);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Typewriter Caret ───────────────────────────────────── */
+.type-caret {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ── Reduced-Motion Override ────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

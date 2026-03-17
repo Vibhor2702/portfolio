@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Vibhor Srivastava portfolio social preview">
+  <defs>
+    <linearGradient id="amberGlow" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#e8a020" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#e8a020" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#252525" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#0d0d0d"/>
+  <rect width="1200" height="630" fill="url(#grid)" opacity="0.55"/>
+  <circle cx="910" cy="140" r="260" fill="url(#amberGlow)"/>
+  <rect x="48" y="48" width="1104" height="534" rx="28" fill="none" stroke="#2a2a2a"/>
+  <g transform="translate(92 110)">
+    <rect width="120" height="120" rx="28" fill="#141414" stroke="#e8a020"/>
+    <text x="24" y="84" fill="#e8a020" font-family="Bebas Neue, Arial, sans-serif" font-size="72" letter-spacing="10">VS</text>
+    <text x="0" y="220" fill="#e8a020" font-family="Bebas Neue, Arial, sans-serif" font-size="24" letter-spacing="12">VIBHOR SRIVASTAVA</text>
+    <text x="0" y="312" fill="#f0ece4" font-family="DM Mono, monospace" font-size="78">ML Engineer</text>
+    <text x="0" y="376" fill="#f0ece4" font-family="DM Mono, monospace" font-size="42">Software Developer / Full-Stack Builder</text>
+    <text x="0" y="458" fill="#b8b1a7" font-family="DM Mono, monospace" font-size="28">I build intelligent systems and ship products end-to-end.</text>
+  </g>
+  <g opacity="0.45">
+    <path d="M0 560H1200" stroke="#2a2a2a" stroke-width="1"/>
+    <path d="M0 576H1200" stroke="#2a2a2a" stroke-width="1"/>
+    <path d="M0 592H1200" stroke="#2a2a2a" stroke-width="1"/>
+  </g>
+</svg>
