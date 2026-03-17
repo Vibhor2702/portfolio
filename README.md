@@ -1,6 +1,6 @@
 ﻿# vibhor-srivastava-portfolio
 
-Personal portfolio website for **Vibhor Srivastava** — ML engineer, backend developer, and full-stack builder.  
+Personal portfolio website for me — ML engineer, backend developer, and full-stack builder.  
 Live: [vibhor-portfolio.pages.dev](https://vibhor-portfolio.pages.dev)
 
 ---
